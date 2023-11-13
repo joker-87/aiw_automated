@@ -1,3 +1,20 @@
+Start-Sleep -Seconds 2
+
+$wshell = New-Object -ComObject Wscript.Shell
+$message = " Welcome to the AIW automated" + [Environment]::NewLine + "to start press [Aceptar]"
+
+# Display the popup and store the return value in the variable $result
+$result = $wshell.Popup($message, 0, "After Install Wizard by @joker_sr2", 0x1)
+
+# Check if the user pressed "Cancel" (result code 2) and exit the script
+if ($result -eq 2) {
+    Write-Host "Script cancelled."
+    exit
+}
+
+Write-Host ' STARTING AIW AUTOMATED' -F darkgray -B darkgreen
+Start-Sleep -Seconds 5
+
 Write-Host ' Checking if winget is installed' -F darkgray -B darkgreen
 Start-Sleep -Seconds 2
 # Verify if winget is intalled an if is not, open msstore to install it
