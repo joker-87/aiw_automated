@@ -153,7 +153,7 @@ $wshell.Popup($message, 0, "Performance Options", 0x1)
 start C:\Windows\System32\SystemPropertiesPerformance.exe
 
 # Installing base software (web browswers, pdf readers, etc...)
-Write-Host ' Starting windows optimization' -F darkgray -B darkgreen
+Write-Host ' Beggining installation base software...' -F darkgray -B darkgreen
 Start-Sleep -Seconds 2
 winget install Mozilla.Firefox -h --accept-package-agreements --accept-source-agreements
 winget install Google.Chrome -h --accept-package-agreements --accept-source-agreements
@@ -162,6 +162,7 @@ winget install 7zip.7zip -h --accept-package-agreements --accept-source-agreemen
 winget install RARLab.WinRAR -h --accept-package-agreements --accept-source-agreements
 winget install RustDesk.RustDesk -h --accept-package-agreements --accept-source-agreements
 winget install GlavSoft.TightVNC -h --accept-package-agreements --accept-source-agreements
+winget install Foxit.FoxitReader -h --accept-package-agreements --accept-source-agreements
 winget install Microsoft.DotNet.Framework.DeveloperPack_4 -h --accept-package-agreements --accept-source-agreements
 winget install 9WZDNCRDFWX0 -h --accept-package-agreements --accept-source-agreements
 winget install Microsoft.VCRedist.2005.x64 -h --accept-package-agreements --accept-source-agreements
@@ -176,10 +177,10 @@ Dism /online /Enable-Feature /FeatureName:"NetFx3"
 Write-Host ' uninstalling bloatware' -F darkgray -B darkgreen
 Start-Sleep -Seconds 2
 $packages = @(
-		"Microsoft.3DBuilder",
-		"Microsoft.BingNews"
+	"Microsoft.3DBuilder",
+	"Microsoft.BingNews"
         "Microsoft.GetHelp"
-        "Microsoft.Getstarted"
+      	"Microsoft.Getstarted"
         "Microsoft.Messaging"
         "Microsoft.Microsoft3DViewer"
         "Microsoft.MicrosoftOfficeHub"
@@ -196,7 +197,7 @@ $packages = @(
         "Microsoft.SkypeApp"
         "Microsoft.StorePurchaseApp"
         "Microsoft.Office.Todo.List"
-		"Microsoft.Wallet",
+	"Microsoft.Wallet",
         "Microsoft.Whiteboard"
         "Microsoft.WindowsAlarms"
         "Microsoft.WindowsCamera"
@@ -209,7 +210,7 @@ $packages = @(
         "Microsoft.XboxGameOverlay"
         "Microsoft.XboxIdentityProvider"
         "Microsoft.XboxSpeechToTextOverlay"
-		"Microsoft.YourPhone",
+	"Microsoft.YourPhone",
         "Microsoft.ZuneMusic"
         "Microsoft.ZuneVideo"
         "*EclipseManager*"
