@@ -60,6 +60,7 @@ $services = @(
         "MapsBroker"
         "RemoteRegistry"
         "BDESVC"
+        "ClickToRunSvc"
 )
 
 # Loop through and show the services status
@@ -92,6 +93,8 @@ Set-Service -Name "dmwappushservice" -StartupType disabled
 Set-Service -Name "MapsBroker" -StartupType disabled
 Set-Service -Name "RemoteRegistry" -StartupType disabled
 Set-Service -Name "BDESVC" -StartupType disabled
+Set-Service -Name "ClickToRunSvc" -StartupType disabled
+
 Start-Sleep -Seconds 2
 <#
 Here we check the services StartType and show it to the user
@@ -104,6 +107,7 @@ $states = @(
         "MapsBroker"
         "RemoteRegistry"
         "BDESVC"
+        "ClickToRunSvc"
 )
 
 # Loop through and show the services start type
